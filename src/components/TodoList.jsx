@@ -116,7 +116,7 @@ const TodoList = () => {
                             return ((show || !item.isComplete) &&
 
                                 <div className="assign-tasks flex  justify-between w-[20%] max-sm:flex-col  " key={i} >
-                                    <div className="div flex gap-5">
+                                    <div className="div flex justify-center items-center gap-5">
 
                                         <input type="checkbox" checked={item.isComplete} onChange={(e) => {
                                             handleCheck(e, item.id)
