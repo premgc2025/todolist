@@ -86,3 +86,16 @@ button:hover {
 
   border-radius: .3rem;
 }
+
+@media (max-width: 420px){
+  .assign-tasks{
+   
+   flex-direction: column;
+   
+   
+
+  }
+  .checkclass{
+    margin-left: 40px;
+  }
+}

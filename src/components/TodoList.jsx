@@ -115,21 +115,21 @@ const TodoList = () => {
 
                             return ((show || !item.isComplete) &&
 
-                                <div className="assign-tasks flex  justify-between w-[20%] max-sm:flex-col  " key={i} >
-                                    <div className="div flex justify-center items-center gap-5">
+                                <div className="assign-tasks flex  justify-between w-[20%]  " key={i} >
+                                    <div className="div flex justify-center items-center gap-5 checkclass">
 
                                         <input type="checkbox" checked={item.isComplete} onChange={(e) => {
                                             handleCheck(e, item.id)
                                         }} />
                                         <p className={`${item.isComplete ? "line-through" : ""} w-[200PX] `}>{item.todo}</p>
                                     </div>
-                                    <div className="manage-task flex gap-1 ml-2  ">
+                                    <div className="manage-task flex gap-1 ml-2 max-sm:gap-0">
                                         <button onClick={(e) => {
                                             handleEdit(e, item.id)
-                                        }} className='bg-green-300 rounded py-1 px-2 cursor-pointer hover:scale-105'>Edit</button>
+                                        }} className='bg-green-300 rounded py-1 px-2 cursor-pointer hover:scale-105 max-sm:px-1 m-1'>Edit</button>
                                         <button onClick={(e) => {
                                             handleDelete(e, item.id)
-                                        }} className='bg-green-300 rounded py-1 px-2 cursor-pointer  hover:scale-105'>Delete</button>
+                                        }} className='bg-green-300 rounded py-1 px-2 cursor-pointer  hover:scale-105 max-sm:px-1 m-1'>Delete</button>
                                     </div>
 
                                 </div>)
