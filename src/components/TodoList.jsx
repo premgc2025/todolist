@@ -8,8 +8,7 @@ const TodoList = () => {
     const [show, setShow] = useState(true);
     const [count, setCount] = useState(0)
 
-    console.log("tod", todo)
-    console.log("todos", todos)
+  
     useEffect(() => {
         let todosString = localStorage.getItem("todos")
         if (todosString) {
@@ -97,7 +96,7 @@ const TodoList = () => {
                 <div className="new-todo">
                     <h2 className='text-xl'>Add new Todo List</h2>
                     <div className="todo-input mb-5">
-                        <input onChange={handleChange} value={todo} type="text" className='h-[2rem] w-[20rem] text-lg indent-1 border-spacing-1 rounded border-cyan-600 bg-slate-200 mr-2 ' />
+                        <input onChange={handleChange} value={todo} type="text" className='h-[2rem] w-[20rem] text-lg indent-1 border-spacing-1 rounded border-cyan-600 bg-slate-200 mr-2 max-sm:w-[9rem]' />
                         <button onClick={handleSave} disabled={todo.length <= 3} className=' h-[2rem] bg-green-300 rounded py-1 px-2 cursor-pointer transition-all ease-in-out duration-100 hover:scale-105 disabled:bg-gray-300'>Save</button>
                         <button onClick={handleLS} className='ml-3 h-[2rem] bg-green-300 rounded py-1 px-2 cursor-pointer transition-all ease-in-out duration-100 hover:scale-105 disabled:bg-gray-300'>Save all to Local Storage</button>
 
@@ -116,15 +115,15 @@ const TodoList = () => {
 
                             return ((show || !item.isComplete) &&
 
-                                <div className="assign-tasks flex flex-wrap gap-3 justify-between w-[50%]" key={i}>
+                                <div className="assign-tasks flex  justify-between w-[20%] max-sm:flex-col  " key={i} >
                                     <div className="div flex gap-5">
 
                                         <input type="checkbox" checked={item.isComplete} onChange={(e) => {
                                             handleCheck(e, item.id)
                                         }} />
-                                        <p className={`${item.isComplete ? "line-through" : ""} w-[300PX]`}>{item.todo}</p>
+                                        <p className={`${item.isComplete ? "line-through" : ""} w-[200PX] `}>{item.todo}</p>
                                     </div>
-                                    <div className="manage-task flex gap-3 ml-40 ">
+                                    <div className="manage-task flex gap-1 ml-2  ">
                                         <button onClick={(e) => {
                                             handleEdit(e, item.id)
                                         }} className='bg-green-300 rounded py-1 px-2 cursor-pointer hover:scale-105'>Edit</button>
