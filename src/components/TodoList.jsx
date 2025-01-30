@@ -90,7 +90,7 @@ const TodoList = () => {
     }
     return (
         <div>
-            <div className="todo mx-20 my-3 bg-orange-300 px-5">
+            <div className="todo mx-20 my-3 bg-orange-300 px-5 max-sm:mx-1">
 
                 <h1 className='font-extralight text-2xl text-center'>Todo Planning</h1>
                 <div className="new-todo">
