@@ -90,15 +90,15 @@ const TodoList = () => {
     }
     return (
         <div>
-            <div className="todo mx-20 my-3 bg-orange-300 px-5 max-sm:mx-1">
+            <div className="todo mx-20 my-3 bg-orange-300 px-5 max-md:mx-5 max-md:bg-orange-400 max-sm:mx-1 max-sm:bg-orange-500">
 
-                <h1 className='font-extralight text-2xl text-center'>Todo Planning</h1>
+                <h1 className='font-extralight text-2xl text-center max-sm:text-left'>Todo Planning</h1>
                 <div className="new-todo">
                     <h2 className='text-xl'>Add new Todo List</h2>
                     <div className="todo-input mb-5">
                         <input onChange={handleChange} value={todo} type="text" className='h-[2rem] w-[20rem] text-lg indent-1 border-spacing-1 rounded border-cyan-600 bg-slate-200 mr-2 max-sm:w-[9rem]' />
-                        <button onClick={handleSave} disabled={todo.length <= 3} className=' h-[2rem] bg-green-300 rounded py-1 px-2 cursor-pointer transition-all ease-in-out duration-100 hover:scale-105 disabled:bg-gray-300'>Save</button>
-                        <button onClick={handleLS} className='ml-3 h-[2rem] bg-green-300 rounded py-1 px-2 cursor-pointer transition-all ease-in-out duration-100 hover:scale-105 disabled:bg-gray-300'>Save all to Local Storage</button>
+                        <button onClick={handleSave} disabled={todo.length <= 3} className=' h-[2rem] bg-green-300 rounded py-1 px-2 cursor-pointer transition-all ease-in-out duration-100 hover:scale-105 disabled:bg-gray-300'>Add</button>
+                        <button onClick={handleLS} className='ml-3 h-[2rem] bg-green-300 rounded py-1 px-2 cursor-pointer transition-all ease-in-out duration-100 hover:scale-105 disabled:bg-gray-300'>Save to Local Storage</button>
 
                     </div>
                     <div className="complete-tasks flex gap-3 text-xl mb-3">
@@ -115,13 +115,13 @@ const TodoList = () => {
 
                             return ((show || !item.isComplete) &&
 
-                                <div className="assign-tasks flex  justify-between w-[20%]  " key={i} >
+                                <div className="assign-tasks flex  justify-between w-[350px] max-[495px]:flex-col " key={i} >
                                     <div className="div flex justify-center items-center gap-5 checkclass">
 
                                         <input type="checkbox" checked={item.isComplete} onChange={(e) => {
                                             handleCheck(e, item.id)
                                         }} />
-                                        <p className={`${item.isComplete ? "line-through" : ""} w-[200PX] `}>{item.todo}</p>
+                                        <p className={`${item.isComplete ? "line-through" : ""} w-[300PX]  tasklist`}>{item.todo}</p>
                                     </div>
                                     <div className="manage-task flex gap-1 ml-2 max-sm:gap-0">
                                         <button onClick={(e) => {
