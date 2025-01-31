@@ -78,7 +78,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="div">
+    <div className="div ">
 
 
       <motion.div
@@ -86,14 +86,15 @@ const Contact = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="contact">
+        <div className="contact max-md:mx-5 max-sm:mx-1">
           <h2>Contact Me</h2>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} >
             <input
               type="name"
               placeholder="Your Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              
 
             />
             <input
